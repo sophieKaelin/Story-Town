@@ -1,18 +1,8 @@
-const express = require("express")
+import express from "express"
 const app = express()
+import { csvToJson } from "./csv-to-json.js"
 
-let data = [
-    {
-        id: 1,
-        name: "Sophie K",
-        human: true,
-    },
-    {
-        id: 2,
-        name: "Sam K",
-        human: false,
-    },
-]
+csvToJson()
 
 app.get("/", (request, response) => {
     response.send("<h1>THIS IS MY SERVER</h1>")
